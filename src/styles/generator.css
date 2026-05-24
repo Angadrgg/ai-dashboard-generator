@@ -1,0 +1,26 @@
+.gen-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
+.gen-bg { position: fixed; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% -10%, #6366f130 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, #22d3ee18 0%, transparent 60%); pointer-events: none; }
+.gen-container { max-width: 680px; width: 100%; position: relative; z-index: 1; text-align: center; }
+.gen-badge { display: inline-block; background: #6366f122; border: 1px solid #6366f144; color: #818cf8; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.5rem; }
+.gen-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, #e2e8f0, #818cf8, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; line-height: 1.1; }
+.gen-sub { color: #64748b; font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.6; }
+.gen-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 1.75rem; text-align: left; margin-bottom: 1.5rem; }
+.gen-label { font-size: 13px; font-weight: 500; color: #94a3b8; margin-bottom: 10px; display: block; }
+.gen-textarea { width: 100%; background: #020917; border: 1px solid #1e293b; border-radius: 10px; padding: 14px 16px; color: #e2e8f0; font-size: 15px; font-family: 'Inter', sans-serif; resize: vertical; min-height: 120px; outline: none; transition: border-color 0.2s; margin-bottom: 1rem; }
+.gen-textarea:focus { border-color: #6366f1; }
+.gen-textarea::placeholder { color: #334155; }
+.gen-error { color: #f87171; font-size: 13px; margin-bottom: 12px; }
+.gen-btn { width: 100%; padding: 14px 24px; background: linear-gradient(135deg, #6366f1, #818cf8); border: none; border-radius: 10px; color: white; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity 0.2s, transform 0.1s; }
+.gen-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.gen-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.gen-btn--loading { background: linear-gradient(135deg, #4338ca, #6366f1); }
+.gen-spinner { width: 16px; height: 16px; border: 2px solid #ffffff40; border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.gen-examples { margin-bottom: 1.5rem; }
+.gen-examples-label { font-size: 12px; color: #475569; margin-bottom: 10px; }
+.gen-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.gen-chip { background: #0f172a; border: 1px solid #1e293b; border-radius: 20px; padding: 6px 14px; color: #64748b; font-size: 12px; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+.gen-chip:hover { border-color: #6366f1; color: #818cf8; }
+.gen-features { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.gen-feature { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #475569; }
+.gen-feature span { color: #22d3ee; }
