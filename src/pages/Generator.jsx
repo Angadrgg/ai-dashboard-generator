@@ -11,7 +11,7 @@ const EXAMPLES = [
   'Project management dashboard with sprint progress, team velocity, and task burndown',
 ]
 
-const HAS_API_KEY = import.meta.env.VITE_GEMINI_API_KEY && import.meta.env.VITE_GEMINI_API_KEY !== 'your_gemini_api_key_here'
+const HAS_API_KEY = true
 
 export default function Generator({ onGenerate, generating, setGenerating }) {
   const [prompt, setPrompt] = useState('')
