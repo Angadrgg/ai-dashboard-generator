@@ -1,0 +1,8 @@
+.widget-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.widget-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px; }
+.widget-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.widget-title { font-size: 13px; font-weight: 500; color: #94a3b8; }
+.widget-pct { font-size: 18px; font-weight: 700; }
+.widget-track { height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
+.widget-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+.widget-label { font-size: 12px; color: #475569; }
