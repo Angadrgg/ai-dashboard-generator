@@ -1,46 +1,49 @@
 # AI Dashboard Generator
 
-Describe any app in plain English and get a full, working SaaS dashboard UI instantly.
+Describe any app in plain English — get a full working SaaS dashboard powered by **Google Gemini 2.0 Flash AI**.
 
-## Features
-
-- **AI-powered generation** — type a prompt, get a complete dashboard
-- **6 domain templates** — Fitness, E-commerce, SaaS, Crypto, HR, Project Management
-- **Full dashboard layout** — Sidebar, Navbar, Stat Cards, Charts, Widgets, Data Table
-- **Recharts integration** — Area charts and Bar charts with tooltips
-- **Custom theming** — each domain gets its own color palette
-- **Interactive table** — search, sort, status badges, pagination
-
-## Getting Started
+## Setup
 
 ```bash
 npm install
+```
+
+### Add your Gemini API key
+
+1. Get a free key at https://aistudio.google.com/app/apikey
+2. Copy `.env.example` to `.env`
+3. Set your key:
+
+```
+VITE_GEMINI_API_KEY=AIza...your_key
+```
+
+```bash
 npm run dev
 ```
 
 Open http://localhost:5173
 
+## Features
+
+- **Real AI generation** — Gemini 2.0 Flash generates a unique dashboard from any prompt
+- **Full dashboard layout** — Sidebar, Navbar, Stat Cards, Charts, Widgets, Data Table
+- **Recharts integration** — Area and Bar charts with custom tooltips
+- **AI-chosen color themes** — Gemini picks a fitting palette for each domain
+- **Interactive table** — search, sort, status badges, pagination
+- **Demo mode** — works without an API key using smart fallback logic
+
 ## How It Works
 
-1. Type a description on the landing page (e.g. *"fitness analytics dashboard"*)
-2. The generator detects the domain from keywords
-3. A full dashboard renders with real charts, stats, and tables
-4. Click **← New Dashboard** in the sidebar to generate another
-
-## Supported Domains
-
-| Keyword | Dashboard |
-|---|---|
-| fitness, workout, calorie | Fitness Analytics |
-| ecommerce, sales, shop | Sales Dashboard |
-| saas, mrr, churn | SaaS Metrics |
-| crypto, bitcoin, portfolio | Crypto Portfolio |
-| hr, employee, recruit | HR Dashboard |
-| project, sprint, task | Project Hub |
+1. Type any description on the landing page (e.g. *"hospital patient management dashboard"*)
+2. Gemini AI generates a complete JSON config with real, domain-specific data
+3. The dashboard renders with contextual charts, stats, and tables
+4. Click **← New Dashboard** to generate another
 
 ## Tech Stack
 
 - React 18 + Vite
+- Google Gemini 2.0 Flash API
 - Recharts (charts)
-- CSS Modules (no Tailwind dependency)
-- Google Fonts (Inter)
+- Vanilla CSS (no Tailwind)
+- Google Fonts (Inter + JetBrains Mono)
