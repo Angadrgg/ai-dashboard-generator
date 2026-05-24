@@ -69,7 +69,7 @@ const FALLBACK_CONFIG = {
 export async function generateDashboard(prompt) {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY
 
-  if (!apiKey || apiKey === 'your_gemini_api_key_here') {
+  if (!apiKey) {
     console.warn('No Gemini API key set — using demo fallback.')
     await new Promise(r => setTimeout(r, 1200))
     return { ...FALLBACK_CONFIG, generatedFrom: prompt }
