@@ -11,6 +11,8 @@ const EXAMPLES = [
   'Project management dashboard with sprint progress, team velocity, and task burndown',
 ]
 
+const HAS_API_KEY = import.meta.env.VITE_GEMINI_API_KEY && import.meta.env.VITE_GEMINI_API_KEY !== 'your_gemini_api_key_here'
+
 export default function Generator({ onGenerate, generating, setGenerating }) {
   const [prompt, setPrompt] = useState('')
   const [error, setError] = useState('')
@@ -20,11 +22,16 @@ export default function Generator({ onGenerate, generating, setGenerating }) {
     if (!prompt.trim()) { setError('Please describe your dashboard'); return }
     setError('')
     setGenerating(true)
-    setProgress('Analyzing your prompt...')
+    setProgress(HAS_API_KEY ? 'Sending to Gemini AI...' : 'Analyzing your prompt...')
     try {
-      setTimeout(() => setProgress('Designing layout & components...'), 600)
-      setTimeout(() => setProgress('Generating charts & data...'), 1200)
-      setTimeout(() => setProgress('Applying theme & styling...'), 1800)
+      if (HAS_API_KEY) {
+        setTimeout(() => setProgress('AI is designing your dashboard...'), 800)
+        setTimeout(() => setProgress('Generating charts & data...'), 2200)
+        setTimeout(() => setProgress('Applying theme & styling...'), 3500)
+      } else {
+        setTimeout(() => setProgress('Designing layout & components...'), 600)
+        setTimeout(() => setProgress('Generating charts & data...'), 1000)
+      }
       const config = await generateDashboard(prompt)
       onGenerate(config)
     } catch (e) {
@@ -39,9 +46,29 @@ export default function Generator({ onGenerate, generating, setGenerating }) {
     <div className="gen-page">
       <div className="gen-bg" />
       <div className="gen-container">
-        <div className="gen-badge">AI-POWERED</div>
+        <div className={`gen-badge ${HAS_API_KEY ? '' : 'gen-badge--demo'}`}>
+          {HAS_API_KEY ? '✦ GEMINI AI POWERED' : '⚠ DEMO MODE — NO API KEY'}
+        </div>
         <h1 className="gen-title">Dashboard Generator</h1>
         <p className="gen-sub">Describe your app in plain English — get a full SaaS dashboard in seconds.</p>
+
+        {!HAS_API_KEY && (
+          <div className="gen-api-notice">
+            <div className="gen-api-icon">🔑</div>
+            <div>
+              <div className="gen-api-title">Add Gemini AI for real generation</div>
+              <div className="gen-api-desc">
+                Create a <code>.env</code> file and add:<br />
+                <code>VITE_GEMINI_API_KEY=your_key_here</code><br />
+                Get a free key at{' '}
+                <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">
+                  aistudio.google.com
+                </a>
+                {' '}— then restart the dev server.
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="gen-card">
           <label className="gen-label">What kind of dashboard do you need?</label>
@@ -79,7 +106,7 @@ export default function Generator({ onGenerate, generating, setGenerating }) {
         </div>
 
         <div className="gen-features">
-          {['Sidebar + Navbar', 'Analytics Cards', 'Live Charts', 'Data Tables', 'Custom Theme', 'Widgets'].map(f => (
+          {['Sidebar + Navbar', 'Analytics Cards', 'Live Charts', 'Data Tables', 'Custom Theme', 'Gemini AI'].map(f => (
             <div key={f} className="gen-feature"><span>✓</span>{f}</div>
           ))}
         </div>
