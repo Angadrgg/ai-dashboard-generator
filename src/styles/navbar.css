@@ -1,0 +1,12 @@
+.navbar { height: 60px; border-bottom: 1px solid #1e293b; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: #07071180; backdrop-filter: blur(8px); flex-shrink: 0; }
+.navbar-left, .navbar-right { display: flex; align-items: center; gap: 12px; }
+.navbar-breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.navbar-bc-home { color: #475569; }
+.navbar-bc-sep { color: #334155; }
+.navbar-bc-current { color: #94a3b8; font-weight: 500; }
+.navbar-search { display: flex; align-items: center; gap: 8px; background: #0f172a; border: 1px solid #1e293b; border-radius: 8px; padding: 6px 12px; }
+.navbar-search input { background: none; border: none; outline: none; color: #94a3b8; font-size: 13px; width: 160px; font-family: inherit; }
+.navbar-search input::placeholder { color: #334155; }
+.navbar-icon-btn { background: transparent; border: none; cursor: pointer; font-size: 16px; padding: 4px; border-radius: 6px; transition: background 0.15s; }
+.navbar-icon-btn:hover { background: #1e293b; }
+.navbar-avatar { width: 32px; height: 32px; border-radius: 50%; background: #6366f1; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: 600; cursor: pointer; }
